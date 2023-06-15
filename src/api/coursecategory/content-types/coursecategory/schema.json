@@ -1,0 +1,22 @@
+{
+  "kind": "collectionType",
+  "collectionName": "coursecategories",
+  "info": {
+    "singularName": "coursecategory",
+    "pluralName": "coursecategories",
+    "displayName": "coursecategory"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "richtext"
+    }
+  }
+}

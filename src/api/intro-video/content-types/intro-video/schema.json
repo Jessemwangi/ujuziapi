@@ -1,0 +1,50 @@
+{
+  "kind": "collectionType",
+  "collectionName": "intro_videos",
+  "info": {
+    "singularName": "intro-video",
+    "pluralName": "intro-videos",
+    "displayName": "video",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "published": {
+      "type": "boolean",
+      "required": true
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "categoryIntro",
+        "subcategoryIntro",
+        "general",
+        "unclassified"
+      ]
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title"
+    },
+    "active": {
+      "type": "boolean"
+    },
+    "videoUrl": {
+      "allowedTypes": [
+        "videos"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}
