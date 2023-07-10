@@ -1,0 +1,69 @@
+{
+  "kind": "collectionType",
+  "collectionName": "course_subcategories",
+  "info": {
+    "singularName": "course-subcategory",
+    "pluralName": "course-subcategories",
+    "displayName": "courseSubcategory"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "introVideo": {
+      "allowedTypes": [
+        "videos"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "coursecategories": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::coursecategory.coursecategory",
+      "inversedBy": "course_subcategories"
+    },
+    "videos": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::intro-video.intro-video",
+      "inversedBy": "course_subcategories"
+    },
+    "level": {
+      "type": "integer"
+    },
+    "levelType": {
+      "type": "enumeration",
+      "enum": [
+        "DayCare",
+        "Nursery",
+        "Primary",
+        "High School,",
+        "University",
+        "College"
+      ]
+    },
+    "levelName": {
+      "type": "string"
+    },
+    "topics": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::topic.topic",
+      "mappedBy": "course_subcategories"
+    },
+    "questions": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::question.question",
+      "mappedBy": "course_subcategories"
+    }
+  }
+}

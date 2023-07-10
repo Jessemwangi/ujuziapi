@@ -1,0 +1,54 @@
+{
+  "kind": "collectionType",
+  "collectionName": "subscription_packages",
+  "info": {
+    "singularName": "subscription-package",
+    "pluralName": "subscription-packages",
+    "displayName": "subscriptionPackage",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "coursecategory": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::coursecategory.coursecategory"
+    },
+    "videos": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::intro-video.intro-video",
+      "inversedBy": "subscription_packages"
+    },
+    "units": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::topic.topic",
+      "inversedBy": "subscription_packages"
+    },
+    "subscriptions": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::agent.agent",
+      "mappedBy": "subscription_packages"
+    },
+    "isActive": {
+      "type": "boolean"
+    },
+    "totalUsers": {
+      "type": "integer"
+    },
+    "charges": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::charge.charge",
+      "inversedBy": "subscription_packages"
+    }
+  }
+}

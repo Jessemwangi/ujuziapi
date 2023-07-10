@@ -1,0 +1,67 @@
+{
+  "kind": "collectionType",
+  "collectionName": "profiles",
+  "info": {
+    "singularName": "profile",
+    "pluralName": "profiles",
+    "displayName": "profile",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "surname": {
+      "type": "string"
+    },
+    "country": {
+      "type": "string"
+    },
+    "city": {
+      "type": "string"
+    },
+    "address": {
+      "type": "string"
+    },
+    "postalCode": {
+      "type": "string"
+    },
+    "occupation": {
+      "type": "string"
+    },
+    "pronoun": {
+      "type": "enumeration",
+      "enum": [
+        "Mr.",
+        "Ms.",
+        "Miss.",
+        "Sir.",
+        "Dr.",
+        "Prof.",
+        "None"
+      ]
+    },
+    "otherName": {
+      "type": "string"
+    },
+    "phoneNumber": {
+      "type": "string",
+      "required": true,
+  "validate": {
+    "regex": "^[0-9]{10}$",
+    "message": "Invalid phone number. Please enter a 10-digit number."
+  }
+    },
+    "title": {
+      "type": "string"
+    },
+    "imageUrl": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

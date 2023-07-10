@@ -1,0 +1,83 @@
+{
+  "kind": "collectionType",
+  "collectionName": "agents",
+  "info": {
+    "singularName": "agent",
+    "pluralName": "agents",
+    "displayName": "subscription",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "regNumber": {
+      "type": "uid",
+      "targetField": "institution",
+      "required": true
+    },
+    "isActive": {
+      "type": "boolean"
+    },
+    "isApproved": {
+      "type": "boolean"
+    },
+    "ApprovedOn": {
+      "type": "date"
+    },
+    "comment": {
+      "type": "string"
+    },
+    "subscriber": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "plugin::users-permissions.user"
+    },
+    "agent": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "agents"
+    },
+    "subscription_packages": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::subscription-package.subscription-package",
+      "inversedBy": "subscriptions"
+    },
+    "institution": {
+      "type": "string"
+    },
+    "address": {
+      "type": "string"
+    },
+    "contactPerson": {
+      "type": "string"
+    },
+    "email": {
+      "type": "email"
+    },
+    "country": {
+      "type": "string"
+    },
+    "contractNumber": {
+      "type": "string"
+    },
+    "contractFile": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    },
+    "startDate": {
+      "type": "date"
+    },
+    "endDate": {
+      "type": "date"
+    }
+  }
+}

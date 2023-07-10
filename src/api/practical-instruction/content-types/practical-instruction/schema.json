@@ -1,0 +1,40 @@
+{
+  "kind": "collectionType",
+  "collectionName": "practical_instructions",
+  "info": {
+    "singularName": "practical-instruction",
+    "pluralName": "practical-instructions",
+    "displayName": "practical-Instruction"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "instruction": {
+      "type": "richtext"
+    },
+    "imageUrl": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
+    },
+    "objective": {
+      "type": "richtext"
+    },
+    "units": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::topic.topic",
+      "mappedBy": "practical_instructions"
+    }
+  }
+}

@@ -17,6 +17,30 @@
     },
     "description": {
       "type": "richtext"
+    },
+    "course_subcategories": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::course-subcategory.course-subcategory",
+      "mappedBy": "coursecategories"
+    },
+    "videos": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::intro-video.intro-video",
+      "mappedBy": "coursecategories"
+    },
+    "topics": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::topic.topic",
+      "mappedBy": "coursecategories"
+    },
+    "questions": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::question.question",
+      "mappedBy": "coursecategories"
     }
   }
 }

@@ -40,11 +40,36 @@
       "type": "boolean"
     },
     "videoUrl": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "videos"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
+    },
+    "subscription_packages": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::subscription-package.subscription-package",
+      "mappedBy": "videos"
+    },
+    "course_subcategories": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::course-subcategory.course-subcategory",
+      "mappedBy": "videos"
+    },
+    "coursecategories": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::coursecategory.coursecategory",
+      "inversedBy": "videos"
+    },
+    "topics": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::topic.topic",
+      "mappedBy": "videos"
     }
   }
 }

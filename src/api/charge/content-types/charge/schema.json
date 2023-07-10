@@ -1,0 +1,37 @@
+{
+  "kind": "collectionType",
+  "collectionName": "charges",
+  "info": {
+    "singularName": "charge",
+    "pluralName": "charges",
+    "displayName": "charge",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "amount": {
+      "type": "decimal"
+    },
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "subscription_packages": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::subscription-package.subscription-package",
+      "mappedBy": "charges"
+    },
+    "approved": {
+      "type": "boolean"
+    },
+    "isActive": {
+      "type": "boolean"
+    }
+  }
+}

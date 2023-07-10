@@ -1,0 +1,42 @@
+{
+  "kind": "collectionType",
+  "collectionName": "study_resources",
+  "info": {
+    "singularName": "study-resource",
+    "pluralName": "study-resources",
+    "displayName": "studyResource"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "serial": {
+      "type": "uid"
+    },
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "file": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "unit": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::topic.topic"
+    },
+    "isDeleted": {
+      "type": "boolean"
+    }
+  }
+}
